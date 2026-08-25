@@ -1,2 +1,859 @@
-# testedesite004
-index.html.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Im Scared of losing people, but who scared of losing me?
+    </title>
+
+
+    <style>
+
+        /* =========================================
+           CONFIGURAÇÕES GERAIS
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #141414,
+                    #302b2b,
+                    #171717
+                );
+
+            color: #f5f5f5;
+
+            padding: 20px;
+        }
+
+
+        /* =========================================
+           CONTAINER PRINCIPAL
+        ========================================= */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            background:
+                rgba(255, 255, 255, 0.07);
+
+            backdrop-filter: blur(15px);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =========================================
+           TÍTULOS
+        ========================================= */
+
+        h1 {
+
+            font-size: 28px;
+
+            line-height: 1.3;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+        }
+
+
+        .subtitulo {
+
+            text-align: center;
+
+            color: #cfcfcf;
+
+            margin-bottom: 30px;
+
+            line-height: 1.6;
+        }
+
+
+        .pergunta {
+
+            text-align: center;
+
+            margin-bottom: 12px;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           CAMPO DE NOME
+        ========================================= */
+
+        input {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 16px;
+
+            background: #f5f5f5;
+
+            color: #111;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           BOTÕES
+        ========================================= */
+
+        button {
+
+            width: 100%;
+
+            min-height: 52px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #f5f5f5;
+
+            color: #222;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        button:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+        }
+
+
+        /* =========================================
+           RESULTADO DA VERIFICAÇÃO
+        ========================================= */
+
+        #resultado {
+
+            margin-top: 20px;
+        }
+
+
+        .nao-autorizado {
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(180, 40, 40, 0.15);
+
+            border:
+                1px solid rgba(255, 80, 80, 0.35);
+
+            text-align: center;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           TEXTO SECRETO
+        ========================================= */
+
+        .texto {
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(0, 0, 0, 0.25);
+
+            line-height: 1.8;
+
+            text-align: left;
+
+            overflow-wrap: break-word;
+        }
+
+
+        .texto p {
+
+            margin-bottom: 18px;
+        }
+
+
+        .nome-destinatario {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            color: #d8d8d8;
+        }
+
+
+        /* =========================================
+           BOTÃO VOLTAR
+        ========================================= */
+
+        .voltar {
+
+            margin-top: 20px;
+
+            background: transparent;
+
+            color: white;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.3);
+        }
+
+
+        /* =========================================
+           CLASSE QUE ESCONDE O CONTEÚDO
+        ========================================= */
+
+        .oculto {
+
+            display: none !important;
+        }
+
+
+        /* =========================================
+           RODAPÉ
+        ========================================= */
+
+        footer {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-size: 12px;
+
+            color: #777;
+        }
+
+
+        /* =========================================
+           CONFIGURAÇÕES PARA CELULAR
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 12px;
+
+                align-items: flex-start;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                max-width: 100%;
+
+                margin-top: 20px;
+
+                padding: 25px 18px;
+
+                border-radius: 16px;
+            }
+
+
+            h1 {
+
+                font-size: 22px;
+
+                line-height: 1.35;
+            }
+
+
+            .subtitulo {
+
+                font-size: 15px;
+            }
+
+
+            .pergunta {
+
+                font-size: 17px;
+            }
+
+
+            input {
+
+                width: 100%;
+
+                height: 52px;
+
+                font-size: 16px;
+            }
+
+
+            button {
+
+                min-height: 52px;
+
+                font-size: 16px;
+            }
+
+
+            .texto {
+
+                padding: 18px;
+
+                font-size: 15px;
+
+                line-height: 1.75;
+
+                overflow-wrap: break-word;
+            }
+
+
+            .texto p {
+
+                margin-bottom: 18px;
+            }
+
+
+            .nao-autorizado {
+
+                font-size: 14px;
+
+                padding: 18px;
+            }
+
+
+            footer {
+
+                margin-bottom: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         CONTAINER
+    ========================================= -->
+
+    <div class="container">
+
+
+        <!-- =====================================
+             TELA INICIAL
+        ====================================== -->
+
+        <div id="inicio">
+
+
+            <h1>
+
+                Im Scared of losing people,
+                <br>
+                but who scared of losing me?
+
+            </h1>
+
+
+            <p class="subtitulo">
+
+                Antes de continuar,
+                responda à pergunta abaixo.
+
+            </p>
+
+
+            <p class="pergunta">
+
+                <strong>
+                    Qual é o seu nome?
+                </strong>
+
+            </p>
+
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome..."
+                autocomplete="off"
+            >
+
+
+            <button onclick="verificarNome()">
+
+                Continuar
+
+            </button>
+
+
+            <div id="resultado"></div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             CONTEÚDO AUTORIZADO
+        ====================================== -->
+
+        <div
+            id="conteudo"
+            class="oculto"
+        >
+
+
+            <h1>
+
+                Im Scared of losing people,
+                <br>
+                but who scared of losing me?
+
+            </h1>
+
+
+            <p
+                class="nome-destinatario"
+                id="saudacao"
+            ></p>
+
+
+            <div class="texto">
+
+
+                <p>
+
+                    <strong>
+                        Im Scared of losing people,
+                        but who scared of losing me?...
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    A gente não sabe exatamente pra quem
+                    estamos escrevendo esse texto,
+                    entretanto, alguns irão ler ele.
+
+                </p>
+
+
+                <p>
+
+                    Quanto mais tentávamos ser bons amigos,
+                    mais nós tornávamos maus amigos,
+                    e para vocês, tentamos ser bons,
+                    a real é que a gente nunca soube
+                    manter uma conversa, ter um assunto
+                    interessante para conversar e meio
+                    de somos chatos.
+
+                </p>
+
+
+                <p>
+
+                    Além de falarmos muito sobre nós mesmos,
+                    sem sequer perguntar se gostariam de ouvir
+                    e isso acabou influenciando a vocês
+                    não gostarem da nossa amizade.
+
+                </p>
+
+
+                <p>
+
+                    Só que a gente se apega a amigos muito
+                    rápido, e isso acabava machucando,
+                    o afastamento e a falta de conversa...
+
+                </p>
+
+
+                <p>
+
+                    Talvez todos só não liguem mesmo,
+                    ou não gostem e isso por algum motivo
+                    é assustador, nós sempre odiamos
+                    socializar, mas por algum motivo
+                    a amizade de vocês supera esse ódio,
+                    e por mais que tentamos evitar isso,
+                    sentimos medo de perder a amizade
+                    de vocês, mesmo que já tenhamos perdido.
+
+                </p>
+
+
+                <p>
+
+                    Nós sabemos que não somos boas pessoas
+                    e constantemente tentamos mudar isso,
+                    mas, quanto mais a gente pensa melhorar,
+                    mais as pessoas se afastam da gente.
+
+                </p>
+
+
+                <p>
+
+                    talvez realmente não sejamos feitos
+                    para essa coisa de socialização...
+                    a gente realmente está tentando mudar.
+
+                </p>
+
+
+            </div>
+
+
+            <button
+                class="voltar"
+                onclick="voltar()"
+            >
+
+                Voltar
+
+            </button>
+
+
+        </div>
+
+
+        <footer>
+
+            Projeto experimental
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+
+        /* =========================================
+           NOMES AUTORIZADOS
+        ========================================= */
+
+        const nomesAutorizados = [
+
+            "Mariposa",
+
+            "Yunna",
+            "Yuna",
+
+            "Elena",
+
+            "Sophia",
+
+            "Uchoa",
+
+            "Eloa",
+            "Eloá",
+
+            "Andria Suzanne",
+
+            "Dudão",
+
+            "Izza F."
+
+        ];
+
+
+
+        /* =========================================
+           NORMALIZAR NOMES
+        =========================================
+
+           Permite:
+
+           Eloá = Eloa
+           MARIPOSA = Mariposa
+           yunna = Yunna
+
+        ========================================= */
+
+        function normalizarNome(nome) {
+
+            return nome
+
+                .normalize("NFD")
+
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
+                )
+
+                .trim()
+
+                .toLowerCase();
+
+        }
+
+
+
+        /* =========================================
+           VERIFICAR NOME
+        ========================================= */
+
+        function verificarNome() {
+
+
+            const campoNome =
+                document.getElementById("nome");
+
+
+            const nomeDigitado =
+                campoNome.value.trim();
+
+
+            const resultado =
+                document.getElementById("resultado");
+
+
+
+            /* Campo vazio */
+
+            if (nomeDigitado === "") {
+
+
+                resultado.innerHTML = `
+
+                    <div class="nao-autorizado">
+
+                        <strong>
+                            Digite seu nome.
+                        </strong>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+
+            /* Normalizar nome */
+
+            const nomeNormalizado =
+                normalizarNome(nomeDigitado);
+
+
+
+            /* Procurar nome */
+
+            const autorizado =
+                nomesAutorizados.some(
+
+                    nome =>
+
+                        normalizarNome(nome)
+                        ===
+                        nomeNormalizado
+
+                );
+
+
+
+            /* =====================================
+               NOME AUTORIZADO
+            ====================================== */
+
+            if (autorizado) {
+
+
+                document
+                    .getElementById("inicio")
+                    .classList
+                    .add("oculto");
+
+
+                document
+                    .getElementById("conteudo")
+                    .classList
+                    .remove("oculto");
+
+
+                document
+                    .getElementById("saudacao")
+                    .innerHTML =
+
+                    `Este texto também chegou até você,
+                    <strong>${nomeDigitado}</strong>.`;
+
+
+            }
+
+
+
+            /* =====================================
+               NOME NÃO AUTORIZADO
+            ====================================== */
+
+            else {
+
+
+                resultado.innerHTML = `
+
+                    <div class="nao-autorizado">
+
+                        <strong>
+                            Acesso não autorizado.
+                        </strong>
+
+                        <p style="margin-top: 12px;">
+
+                            No reino das minhas faces,
+                            tu és a máscara caída,
+                            retorne à sua prateleira
+                            e volte após conhecer-me.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           BOTÃO VOLTAR
+        ========================================= */
+
+        function voltar() {
+
+
+            document
+                .getElementById("conteudo")
+                .classList
+                .add("oculto");
+
+
+            document
+                .getElementById("inicio")
+                .classList
+                .remove("oculto");
+
+
+            document
+                .getElementById("nome")
+                .value = "";
+
+
+            document
+                .getElementById("resultado")
+                .innerHTML = "";
+
+        }
+
+
+
+        /* =========================================
+           PRESSIONAR ENTER
+        ========================================= */
+
+        document
+            .getElementById("nome")
+            .addEventListener(
+                "keydown",
+                function(event) {
+
+                    if (event.key === "Enter") {
+
+                        verificarNome();
+
+                    }
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>
